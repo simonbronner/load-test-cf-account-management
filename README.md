@@ -22,7 +22,7 @@ RUN apk add --update --no-cache curl
 ARG TERRAFORM_CODEFRESH_PROVIDER_VERSION
 
 RUN curl -o /tmp/terraform-provider-codefresh.tar.gz \
-  https://artifactory.gcp.anz/artifactory/github/codefresh-io/terraform-provider-codefresh/releases/download/${TERRAFORM_CODEFRESH_PROVIDER_VERSION}/terraform-provider-codefresh_${TERRAFORM_CODEFRESH_PROVIDER_VERSION}_Linux_x86_64.tar.gz --fail --silent -SL \
+  https://github.com/codefresh-io/terraform-provider-codefresh/releases/download/${TERRAFORM_CODEFRESH_PROVIDER_VERSION}/terraform-provider-codefresh_${TERRAFORM_CODEFRESH_PROVIDER_VERSION}_Linux_x86_64.tar.gz --fail --silent -SL \
   && mkdir -p /root/.terraform.d/plugins/linux_amd64 \
   && tar -xzf /tmp/terraform-provider-codefresh.tar.gz -C /root/.terraform.d/plugins/linux_amd64 \
   && rm /tmp/terraform-provider-codefresh.tar.gz
